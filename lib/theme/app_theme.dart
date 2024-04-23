@@ -8,8 +8,31 @@ class AppTheme {
       backgroundColor: Pallete.backgroundColor,
       elevation: 0,
     ),
+    searchBarTheme: SearchBarThemeData(
+      backgroundColor: MaterialStateProperty.all(Pallete.onBackgroundColor),
+      surfaceTintColor: MaterialStateProperty.all(Pallete.onBackgroundColor),
+      hintStyle: MaterialStateProperty.all(
+        TextStyle(
+          color: Colors.grey,
+        ),
+      ),
+      textStyle: MaterialStateProperty.all(
+        TextStyle(
+          color: Pallete.whiteColor,
+        ),
+      ),
+    ),
     floatingActionButtonTheme: const FloatingActionButtonThemeData(
       backgroundColor: Pallete.blueColor,
     ),
+    buttonTheme: const ButtonThemeData(
+        buttonColor: Pallete.greenColor, textTheme: ButtonTextTheme.primary),
+    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+      backgroundColor: Pallete.onBackgroundColor,
+      selectedItemColor: Pallete.greenColor,
+      unselectedItemColor: Pallete.greyColor,
+    ),
   );
 }
+
+class Palette {}

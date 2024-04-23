@@ -1,3 +1,5 @@
+import 'package:club_frontend/features/home/home_page.dart';
+import 'package:club_frontend/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -23,12 +25,12 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         title: 'Club Application',
-        theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-          useMaterial3: true,
-        ),
-        initialRoute: RoutesName.login,
+        theme: AppTheme.theme,
+        initialRoute: RoutesName.home,
         onGenerateRoute: Routes.generateRoute,
+        routes: {
+          RoutesName.home: (context) => const MyHomePage(),
+        },
       ),
     );
   }
