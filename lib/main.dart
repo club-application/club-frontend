@@ -1,3 +1,4 @@
+import 'package:club_frontend/features/home/SingleChatPage.dart';
 import 'package:club_frontend/features/home/home_page.dart';
 import 'package:club_frontend/theme/app_theme.dart';
 import 'package:flutter/material.dart';
@@ -6,6 +7,7 @@ import 'package:provider/provider.dart';
 import 'common/routes/routes.dart';
 import 'common/routes/routes_name.dart';
 import 'features/auth/controller/auth_controller.dart';
+import 'features/home/all_chat_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -30,6 +32,8 @@ class MyApp extends StatelessWidget {
         onGenerateRoute: Routes.generateRoute,
         routes: {
           RoutesName.home: (context) => const MyHomePage(),
+          RoutesName.chatpage: (context) => const AllChatPage(),
+          RoutesName.singleChatPage: (context) => const SingleChatPage()
         },
       ),
     );

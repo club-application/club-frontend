@@ -2,6 +2,7 @@ import 'package:club_frontend/features/home/user_clubs_page.dart';
 import 'package:flutter/material.dart';
 
 import 'explore_page.dart';
+import 'feed_page.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -13,7 +14,7 @@ class MyHomePage extends StatefulWidget {
 class MyHomePageState extends State<MyHomePage> {
   int _currentIndex = 0;
   final List<Widget> _children = [
-    Text('home'),
+    FeedPage(),
     ExplorePage(),
     UserClub(),
     Text('Settings')

@@ -32,6 +32,11 @@ class AppTheme {
       selectedItemColor: Pallete.greenColor,
       unselectedItemColor: Pallete.greyColor,
     ),
+    listTileTheme: const ListTileThemeData(
+      tileColor: Pallete.onBackgroundColor,
+      titleTextStyle: TextStyle(color: Pallete.whiteColor),
+      subtitleTextStyle: TextStyle(color: Pallete.greyColor),
+    ),
   );
 }
 
