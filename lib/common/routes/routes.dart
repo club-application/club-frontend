@@ -1,5 +1,7 @@
 import 'package:club_frontend/common/routes/routes_name.dart';
+import 'package:club_frontend/features/authentication/otp_screen.dart';
 import 'package:flutter/material.dart';
+import '../../features/authentication/signup_screen.dart';
 
 class Routes {
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -7,7 +9,10 @@ class Routes {
       case RoutesName.home:
         return _buildPageRoute(const Placeholder());
       case RoutesName.login:
-        return _buildPageRoute(const Placeholder());
+        return MaterialPageRoute(
+          settings: settings,
+          builder: (_) => const OtpScreen(),
+        );
       default:
         return _buildPageRoute(
           const Scaffold(

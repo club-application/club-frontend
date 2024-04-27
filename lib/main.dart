@@ -1,9 +1,15 @@
+import 'package:club_frontend/features/authentication/login_screen.dart';
+import 'package:club_frontend/features/authentication/otp_screen.dart';
+import 'package:club_frontend/features/authentication/signup_screen.dart';
+import 'package:club_frontend/theme/pallete.dart';
+
 import 'package:club_frontend/features/home/SingleChatPage.dart';
 import 'package:club_frontend/features/home/home_page.dart';
 import 'package:club_frontend/theme/app_theme.dart';
-import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
 import 'common/routes/routes.dart';
 import 'common/routes/routes_name.dart';
 import 'features/auth/controller/auth_controller.dart';
@@ -19,6 +25,9 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+
+
+ 
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(
@@ -37,5 +46,6 @@ class MyApp extends StatelessWidget {
         },
       ),
     );
+
   }
 }
