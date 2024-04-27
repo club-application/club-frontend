@@ -2,11 +2,11 @@ import 'package:club_frontend/theme/pallete.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class Back extends StatelessWidget{
+class RBack extends StatelessWidget{
 
   final BuildContext context;
 
-  Back(this.context);
+  RBack(this.context);
 
 
   @override
@@ -27,7 +27,9 @@ class Back extends StatelessWidget{
             ),
 
             child: InkWell(
-              onTap: () {},
+              onTap: () {
+                Navigator.pop(context);
+              },
               child: Center(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,

@@ -1,4 +1,4 @@
-import 'package:club_frontend/theme/pallete.dart';
+import 'package:club_frontend/utils/widgets/linear_gradient.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -21,16 +21,12 @@ class GradientButton extends StatelessWidget {
     return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
-        primary: Colors.transparent,
+        backgroundColor: Colors.transparent,
         padding: EdgeInsets.zero,
       ),
       child: Ink(
         decoration: BoxDecoration(
-          gradient:  LinearGradient(
-            colors: [Pallete.lightGreen, Pallete.green],
-            begin: Alignment.centerLeft,
-            end: Alignment.centerRight,
-          ),
+          gradient:  componentsGradient,
           borderRadius: BorderRadius.circular(15.r),
         ),
         child: Container(
