@@ -1,6 +1,8 @@
 import 'package:club_frontend/features/authentication/login_screen.dart';
 import 'package:club_frontend/features/authentication/otp_screen.dart';
 import 'package:club_frontend/features/authentication/signup_screen.dart';
+import 'package:club_frontend/features/user_setup.dart/success_screen.dart';
+import 'package:club_frontend/features/user_setup.dart/user_bio.dart';
 import 'package:club_frontend/theme/pallete.dart';
 
 import 'package:club_frontend/features/home/SingleChatPage.dart';
@@ -22,30 +24,42 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    // return MultiProvider(
+    //   providers: [
+    //     ChangeNotifierProvider(
+    //       create: (_) => AuthController(),
+    //     )
+    //   ],
+    //   child:
 
-
- 
-    return MultiProvider(
-      providers: [
-        ChangeNotifierProvider(
-          create: (_) => AuthController(),
-        )
-      ],
-      child: MaterialApp(
-        title: 'Club Application',
-        theme: AppTheme.theme,
-        initialRoute: RoutesName.home,
-        onGenerateRoute: Routes.generateRoute,
-        routes: {
-          RoutesName.home: (context) => const MyHomePage(),
-          RoutesName.chatpage: (context) => const AllChatPage(),
-          RoutesName.singleChatPage: (context) => const SingleChatPage()
-        },
+    return ScreenUtilInit(
+      builder: (context, child) => MultiProvider(
+        providers: [
+          ChangeNotifierProvider(
+            create: (_) => AuthController(),
+          )
+        ],
+        child: MaterialApp(
+          title: 'Club Application',
+          theme: AppTheme.theme,
+          initialRoute: RoutesName.login,
+          onGenerateRoute: Routes.generateRoute,
+          routes: {
+            RoutesName.home: (context) => const MyHomePage(),
+            RoutesName.chatpage: (context) => const AllChatPage(),
+            RoutesName.singleChatPage: (context) => const SingleChatPage(),
+            RoutesName.login: (context) => const LoginScreen(),
+            RoutesName.signup: (context) => const SignupScreen(),
+            RoutesName.otpScreen: (context) => const OtpScreen(),
+            RoutesName.successScreen: (context) => const SuccessScreen(),
+            RoutesName.bio: (context) => const UserBio(),
+          },
+        ),
       ),
+      designSize: const Size(430, 932),
     );
-
+    // This widget is the root of your application.
   }
 }
